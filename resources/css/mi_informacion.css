@@ -1,0 +1,81 @@
+html{
+    height: 100vh;
+}
+
+.btn-primary{
+    width: 235px;
+}
+
+.rounded-0{
+    background-color: #F2DBDC;
+    color: black;
+    border: none;
+    --bs-btn-hover-bg:#D75858;
+    --bs-btn-active-bg:#D75858;
+    --bs-btn-active-color:#ffffff;
+}
+
+.vr{
+    background-color: #D75858;
+    color: #D75858;
+    opacity: 100;
+    --bs-border-width:10px;
+    min-height: 36px;
+}
+
+.btn.btn-success{
+    height: 38px;
+}
+
+.row.d-flex{
+    --bs-gutter-x:0rem;
+}
+
+.agregar-direccion{
+    margin-bottom: 0px;
+}
+
+#contenedor-agregar-direccion{
+    border: 1px; 
+    border-style: dashed; 
+    border-radius: 20px; 
+    font-size: 15px;
+    height: 45px;
+    cursor: pointer;
+}
+
+.botonDireccion{
+    height: 45px !important;
+    width: 42px;
+}
+
+.psinmargen{
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+    .flex-fill {
+        flex: 0 0 auto !important;
+    }
+}
+
+@media (max-width: 1199px) {
+    .col-md-5 {
+        flex: 0 0 auto;
+        width: 49%;
+    }
+}
+
+@media (max-width: 1199px) {
+    .col-md-5 {
+        flex: 0 0 auto;
+        width: 49%;
+    }
+}
+
+@media (max-width: 555px) {
+    .col-md-5 {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+}

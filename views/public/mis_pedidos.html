@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!-- Declaración el idioma -->
+<html lang="es">
+
+<head>
+    <!-- Metadatos de la página -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título de la página -->
+    <title>Mis pedidos</title>
+    <!-- Mandar a llamar el framework -->
+    <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Mandar a llamar íconos del framework -->
+    <link href="../../resources/css/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Mandar a llamar el css del navbar -->
+    <link rel="stylesheet" href="../../resources/css/navbar_publico.css" type="text/css">
+    <!-- Mandar a llamar el css de la página -->
+    <link rel="stylesheet" href="../../resources/css/mis_pedidos.css" type="text/css">
+</head>
+
+<!-- Cuerpo de la página -->
+
+<body>
+    <!-- Contenido principal de la página -->
+    <main>
+        <!-- Contenedor padre -->
+        <div class="container-fluid">
+            <div class="row mt-5 d-flex align-items-start">
+                <!-- Menú lateral -->
+                <div class="col d-flex flex-column" id="menu_cuenta">
+
+                </div>
+                <!-- Imagen de bienvenida -->
+                <div class="col-12 col-lg-8" id="contenedorPedidos">
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal para ver información del pedido -->
+        <div class="modal" id="modalDetalles">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5>Productos del pedido</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col-12" id="contenedorProductos">
+
+                        </div>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <div class="btn btn-primary d-flex justify-content-center text-light fw-semibold gap-3" onclick="mostrarPdf()">
+                            <i class="bi bi-filetype-pdf"></i>Generar factura
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Librería para generar PDF -->
+    <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+    <!-- Mandar a llamar el framework -->
+    <script src="../../resources/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+    <!-- Mandar a llamar la librería de alertas -->
+    <script type="text/javascript" src="../../resources/js/sweetalert.min.js"></script>
+    <!-- Llamada al controlador general de la aplicación -->
+    <script type="text/javascript" src="../../controllers/utils/componentes.js"></script>
+    <!-- Mandar a llamar el navbar -->
+    <script type="text/javascript" src="../../controllers/utils/publico.js"></script>
+    <!-- Mandar a llamar el menú lateral -->
+    <script type="text/javascript" src="../../controllers/utils/menu_lateral.js"></script>
+    <!-- Mandar a llamar el controlador de mis pedidos -->
+    <script type="text/javascript" src="../../controllers/public/mis_pedidos.js"></script>
+</body>
+
+</html>

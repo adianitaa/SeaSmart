@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    width: 100vw;
+}
+
+.top-banner-image{
+    width: 100vw;
+    height: 400px;
+    object-fit: cover;
+    object-position: top left;
+}
+
+.swiper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.swiper-wrapper {
+    width: 90%;
+}
+
+.custom-prev::after,
+.custom-next::after {
+    color: rgb(97, 97, 97);
+}
+
+/* CARTAS */
+
+.cloth-card {
+    height: 350px;
+    width: 210px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cloth-card-img {
+    object-fit: cover;
+    object-position: center;
+    height: 65%;
+    border-radius: 5px;
+}
+
+.cloth-card-info {
+    height: 10%;
+}
+
+.cloth-card-price {
+    height: 15%;
+    display: flex;
+    align-items: center;
+    color: red;
+    font-style: bold;
+}
+
+.cloth-card-buy {
+    height: 10%;
+    border-radius: 20px;
+    background-color: white;
+    border: 2px solid black;
+    transition: all 0.5s ease;
+}
+
+.cloth-card-buy:hover {
+    background-color: black;
+    color: white;
+}

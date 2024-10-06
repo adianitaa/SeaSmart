@@ -1,0 +1,87 @@
+html{
+    height: 100vh;
+}
+
+.dropdown-menu{
+    --bs-dropdown-link-active-bg:#BCE7FD;
+    --bs-dropdown-link-active-color:black;
+    --bs-dropdown-padding-x: 1rem;
+    --bs-dropdown-padding-y: 1rem;
+    --bs-dropdown-bg: #BCE7FD;
+}
+
+.dropdown-item{
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    border: 2px solid #4285F4;
+}
+
+.botonAbajo{
+    margin-top: 8px;
+    background-color: #f44242 !important; 
+    color: white;
+    --bs-dropdown-link-hover-bg: #4285F4;
+    --bs-dropdown-link-hover-color: #ffffff;
+    padding: 10px !important;
+}
+
+a{
+    text-decoration: none;
+}
+
+.parrafoSeaSmart{
+    font-weight: 500;
+    font-size: x-large;
+}
+
+.spanSeaSmart{
+    color: #3E88DE;
+}
+
+#btnCerrarSesion_d{
+    background-color: rgb(253, 29, 29);
+    --bs-dropdown-link-active-color:black;
+    color: white;
+    --bs-dropdown-link-active-bg:#7f4fd9;
+    --bs-dropdown-link-active-color:rgb(255, 255, 255);
+    border-radius: 10px;
+    border: none;
+}
+
+#seasmart-container{
+    cursor: pointer;
+}
+
+html{
+    min-height: 100%;
+}
+
+body{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    flex: 1;
+}
+
+.navbar{
+    background-color: #BCE7FD;
+}
+
+#texto-ss{
+    font-weight: 500; font-size: x-large;
+    margin: 0px;
+    padding: 0px;
+}
+
+span{
+    color: #3E88DE;
+}
+
+#quienes_somos{
+    text-decoration: underline;
+    color: blue;
+}

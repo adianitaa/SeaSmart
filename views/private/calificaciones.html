@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<!-- Definir idioma de la página -->
+<html lang="es">
+
+<head>
+    <!-- Metadatos de la página -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título del documento -->
+    <title>Calificaciones</title>
+    <!-- Mandar a llamar el framework -->
+    <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Mandar a llamar css del navbar -->
+    <link href="../../resources/css/navbar_privado.css" rel="stylesheet">
+    <!-- Css para la tabla responsive -->
+    <link href="../../resources/css/tabla_responsive.css" rel="stylesheet">
+</head>
+
+<!-- Cuerpo de la página -->
+
+<body>
+    <!-- Contenido principal de la página -->
+    <main>
+        <!-- Contenedor padre -->
+        <div class="container-fluid">
+            <div class="row mt-4 px-md-5">
+                <div class="col-11">
+                    <div class="d-flex align-items-center ms-4" id="contenedor-img-filtro">
+                        <div class="text-start">Filtros</div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="ms-2"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5zm1 .5v1.308l4.372 4.858A.5.5 0 0 1 7 8.5v5.306l2-.666V8.5a.5.5 0 0 1 .128-.334L13.5 3.308V2z">
+                            </path>
+                        </svg>
+                    </div>
+                    <!-- Buscador -->
+                    <div class="col-12 col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <form class="d-flex" id="formBuscar">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Buscar por nombre de cliente o producto..." name="buscarValoracion" id="buscarValoracion" oninput="verificarReset()">
+                            <button class="btn" type="submit"><img src="../../resources/img/lupa.png" class="img-fluid"
+                                    width="35px" height="35px" alt="buscarimg"></button>
+                        </form>
+                    </div>
+                </div>
+                <!-- Filtrador de registros  -->
+                <div class="col-12 d-flex ms-4 mt-4 gap-3">
+                    <div class="row">
+                        <div class="col-11">
+                            <p class="text-start">Ordenar por fecha de valoración:</p>
+                        </div>
+                        <div class="col-11 col-md-10">
+                            <div class="dropdown">
+                                <select class="form-select form-select-sm" id="selectedFiltro">
+                                    <option value=1>Más reciente</option>
+                                    <option value=0>Más antiguo</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Tabla de datos responsiva -->
+        <div class="table-responsive-md mt-5 px-md-5" id="contenedorTabla">
+            <table class="table table-hover">
+                <!-- Cabecera de la tabla -->
+                <thead>
+                    <tr>
+                        <th class="text-center">Nombre del cliente</th>
+                        <th class="text-center">Producto</th>
+                        <th class="text-center">Fecha de calificación</th>
+                        <th class="text-center">Calificación</th>
+                        <th class="text-center">Comentario</th>
+                        <th class="text-center">Visibilidad</th>
+                    </tr>
+                </thead>
+                <!-- Cuerpo de la tabla -->
+                <tbody id="cuerpoTabla">
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <!-- IMPORTANDO ARCHIVOS JAVASCRIPT -->
+    <!-- Mandar a llamar el framework -->
+    <script type="text/javascript" src="../../resources/js/bootstrap.bundle.min.js"></script>
+    <!-- Mandar a llamar la librería de alertas -->
+    <script type="text/javascript" src="../../resources/js/sweetalert.min.js"></script>
+    <!-- Llamada al controlador general de la aplicación -->
+    <script type="text/javascript" src="../../controllers/utils/componentes.js"></script>
+    <!-- Mandar a llamar el controlador de la página privada -->
+    <script type="text/javascript" src="../../controllers/utils/admin.js"></script>
+    <!-- Mandar a llamar el controlador de calificaciones -->
+    <script type="text/javascript" src="../../controllers/private/calificaciones.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<!-- Declaración del idioma -->
+<html lang="es">
+
+<head>
+    <!-- Metadatos de la página -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título de la página -->
+    <title>Editar pedido</title>
+    <!-- Mandar a llamar el framework -->
+    <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Css de la página -->
+    <link rel="stylesheet" href="../../resources/css/quienes_somos.css" type="text/css">
+    <!-- Mandar a llamar el css del navbar -->
+    <link rel="stylesheet" href="../../resources/css/navbar_publico.css" type="text/css">
+    <!-- Mandar a llamar el css de linea vertical -->
+    <link rel="stylesheet" href="../../resources/css/informacion_de_pedido.css" type="text/css">
+</head>
+
+<!-- Cuerpo de la página -->
+
+<body>
+
+    <main>
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-md-6">
+                    <h1>Editar pedido</h1>
+                    <div class="row">
+                        <div class="col-sm-6 col-md-6">
+                            <h5 class="custom-bold-label">Nombre del cliente:</h5>
+                            <p>Charlootte Chacón</p>
+                        </div>
+                        <div class="col-sm-6 col-md-6">
+                            <h5 class="list-group">Fecha del pedido:</h5>
+                            <p>05/04/2024</p>
+                        </div>
+                        <div class="col-sm-6 col-md-6">
+                            <h5 class="custom-bold-label">Número de teléfono:</h5>
+                            <p>7845-2323</p>
+                        </div>
+                        <div class="col-sm-6 col-md-6">
+                            <h5 class="list-group">Estado del pedido:</h5>
+                            <div class="col">
+                                <div class="dropdown">
+                                    <button class="btn btn-primary dropdown-toggle" type="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Todos
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Pendiente</a></li>
+                                        <li><a class="dropdown-item" href="#">Siendo enviado</a></li>
+                                        <li><a class="dropdown-item" href="#">Finalizado</a></li>
+                                        <li><a class="dropdown-item" href="#">Enviado</a></li>
+                                        <li><a class="dropdown-item" href="#">Anulado</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6">
+                            <h5 class="custom-bold-label">Teléfono fijo:</h5>
+                            <p>8909-7878</p>
+                        </div>
+                        <div class="col-sm-6 col-md-6">
+                            <h5 class="list-group">Dirección del pedido:</h5>
+                            <p>Urb La Gloria Pje 4-a Políg 6-a No 16 Mejicanos San Salvador San Salvador</p>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col text-center">
+                                <button type="button" class="btn btn-primary">Guardar pedido
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-floppy" viewBox="0 0 16 16">
+                                        <path d="M11 2H9v3h2z" />
+                                        <path
+                                            d="M1.5 0h11.586a1.5 1.5 0 0 1 1.06.44l1.415 1.414A1.5 1.5 0 0 1 16 2.914V14.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 14.5v-13A1.5 1.5 0 0 1 1.5 0M1 1.5v13a.5.5 0 0 0 .5.5H2v-4.5A1.5 1.5 0 0 1 3.5 9h9a1.5 1.5 0 0 1 1.5 1.5V15h.5a.5.5 0 0 0 .5-.5V2.914a.5.5 0 0 0-.146-.353l-1.415-1.415A.5.5 0 0 0 13.086 1H13v4.5A1.5 1.5 0 0 1 11.5 7h-7A1.5 1.5 0 0 1 3 5.5V1H1.5a.5.5 0 0 0-.5.5m3 4a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5V1H4zM3 15h10v-4.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5z" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Linea vertical -->
+                <div class="vertical-line col-md-1"></div>
+
+                <div class="col-md-5">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-6">
+                            <p class="list-group">Cantidad de productos: 5</p>
+                        </div>
+                        <div class="col-sm-6 col-md-6">
+                            <p class="list-group">Total del pedido: $24 </p>
+                        </div>
+                        <div>
+                            <hr id="color_linea">
+                        </div>
+                        <!-- Columna para la imagen -->
+                        <div class="col-6">
+                            <img src="../../resources/img/goggles.jpg" alt="Goggles" class="img-fluid">
+                        </div>
+                        <!-- Columna para la descripción -->
+                        <div class="col-6">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <h5>Goggles color rosa</h5>
+                                    <button type="button" class="btn btn-danger"></button>
+                                    <!--Creamos los botones de la cantidad -->
+                                    <div class="col-6 d-flex align-items-center d-flex flex-column gap-3">
+                                        <div class="d-flex gap-3 align-items-center">
+                                            <p class="fw-bold fs-6 cantidad">Cantidad:</p>
+                                            <img src="../..//resources/img/menos.png" alt="menos"
+                                                class="img-fluid border p-1 cantidad">
+                                            <p class="fs-6 cantidad" id="cantidadProducto">1</p>
+                                            <img src="../../resources/img/mas.png" alt="menos"
+                                                class="img-fluid border p-1 cantidad">
+                                        </div>
+                                    </div>
+                                    <p>SubTotal: $12.00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- Columna para la imagen -->
+                        <div class="col-6">
+                            <img src="../../resources/img/goggles.jpg" alt="Goggles" class="img-fluid">
+                        </div>
+                        <!-- Columna para la descripción -->
+                        <div class="col-6">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <h5>Goggles color rosa</h5>
+                                    <button type="button" class="btn btn-danger"></button>
+                                    <!--Creamos los botones de la cantidad -->
+                                    <div class="col-6 d-flex align-items-center d-flex flex-column gap-3">
+                                        <div class="d-flex gap-3 align-items-center">
+                                            <p class="fw-bold fs-6 cantidad">Cantidad:</p>
+                                            <img src="../..//resources/img/menos.png" alt="menos"
+                                                class="img-fluid border p-1 cantidad">
+                                            <p class="fs-6 cantidad" id="cantidadProducto">1</p>
+                                            <img src="../../resources/img/mas.png" alt="menos"
+                                                class="img-fluid border p-1 cantidad">
+                                        </div>
+                                    </div>
+                                    <p>SubTotal: $12.00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+    <!-- IMPORTANDO ARCHIVOS JAVASCRIPT -->
+    <!-- Mandar a llamar el framework -->
+    <script type="text/javascript" src="../../resources/js/bootstrap.bundle.min.js"></script>
+    <!-- Mandar a llamar la librería de alertas -->
+    <script type="text/javascript" src="../../resources/js/sweetalert.min.js"></script>
+    <!-- Llamada al controlador general de la aplicación -->
+    <script type="text/javascript" src="../../controllers/utils/componentes.js"></script>
+    <!-- Mandar a llamar el controlador de la página privada -->
+    <script type="text/javascript" src="../../controllers/utils/admin.js"></script>
+</body>
+
+</html>

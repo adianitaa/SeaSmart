@@ -1,0 +1,9 @@
+.psinmargen{
+    margin: 0;
+}
+
+@media only screen and (max-width:767px) {
+    #botonReporte{
+        width: 75% !important;
+    }
+}

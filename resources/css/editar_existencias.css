@@ -1,0 +1,52 @@
+/* Define un color de fondo gris */
+.bg-gray-color {
+    background-color: #F6F3F3; /* Tu color gris en hexadecimal */
+}
+
+/* Cambia el color del texto de los elementos del menú desplegable a negro */
+.custom-dropdown-menu .dropdown-item {
+    color: black; /* Cambia el color del texto a negro */
+}
+
+/* Define el estilo de las etiquetas de texto en negrita */
+.custom-bold-label {
+    font-weight: bold;
+}
+
+/* Estilo para los elementos del menú desplegable */
+.dropdown-menu .dropdown-item {
+    background-color: transparent !important; /* Hace transparente el fondo */
+    border: none !important; /* Elimina el borde */
+    padding: 0.5rem 1rem !important; /* Ajusta el padding */
+}
+
+/* Estilo para los elementos de la lista */
+.list-group-item {
+    border-radius: 20px; 
+}
+
+/* Estilo para los elementos de insignia personalizados */
+.badge-custom {
+    border-radius: 30px; 
+    padding: 6px 40px; 
+    font-size: 14px; 
+    background-color: rgb(255, 255, 255); /* Color de fondo blanco */
+}
+
+/* Estilo para el texto de producto */
+.producto {
+    font-size: 14px; /* Tamaño de fuente */
+    font-weight: bold; /* Texto en negrita */
+    color: black; /* Color del texto */
+}
+
+/* Estilo para el texto de la marca */
+.marca {
+    font-size: 12px; /* Tamaño de fuente */
+    color: black; /* Color del texto */
+}
+
+/* estilos.css */
+.list-group-horizontal {
+    list-style: none;
+}

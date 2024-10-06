@@ -1,0 +1,44 @@
+html{
+    height:75%
+}
+
+body{
+    height: 100%;
+}
+
+main{
+    height: 100%;
+}
+
+span{
+    color: #4593EE;
+}
+
+#tituloPrincipal{
+    font-size: 50px; color: #55B8EB;
+}
+
+.btnAccion{
+    background-color: #BCE7FD; color: #418DE7 !important;
+}
+
+.inputT{
+    background-color: #DCF2F1 !important;
+    border-color: #BCE7FD !important;
+    font-size: 18px !important;
+}
+
+.inputT::placeholder{
+    background-color: #DCF2F1 !important; 
+    color: #2B2D42 !important;
+    opacity: 30% !important;
+    font-size: 18px !important;
+}
+
+.navbar{
+    background-color: #BCE7FD; height: 140px;
+}
+
+a{
+    text-decoration: none !important;
+}

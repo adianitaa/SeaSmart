@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<!-- Declaración del idioma -->
+<html lang="es">
+
+<head>
+    <!-- Metadatos de la página -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título de la página -->
+    <title>Pedidos</title>
+    <!-- Mandar a llamar el framework -->
+    <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Mandar a llamar css del navbar -->
+    <link href="../../resources/css/navbar_privado.css" rel="stylesheet">
+    <!-- Mandar a llamar íconos del framework -->
+    <link href="../../resources/css/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Mandar a llamar el css de la página -->
+    <link href="../../resources/css/pedidos.css" rel="stylesheet">
+</head>
+
+<!-- Cuerpo de la página -->
+
+<body>
+    <!-- Contenido principal de la página -->
+    <main>
+        <!-- CREAMOS EL CONTENEDOR PADRE -->
+        <div class="container-fluid">
+            <div class="row mt-4 px-md-5">
+                <div class="col-12 col-md-6 d-flex flex-column gap-3">
+                    <div class="row" id="contenedor-img-filtro">
+                        <div class="col d-flex flex-row gap-2">
+                            <div class="text-start">Filtros</div>
+                            <div><i class="bi bi-funnel"></i></div>
+                        </div>
+                    </div>
+                    <div class="row d-flex align-items-center">
+                        <div class="col d-flex flex-row gap-3">
+                            <p class="text-start">Estado:</p>
+                            <select name="estadoPedido" id="estadoPedido" class="form-select w-50">
+                                
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col d-flex flex-row flex-wrap align-items-center gap-3">
+                            <!-- CREAMOS LAS CLASES PARA COLOCAR LAS FECHAS -->
+                            <p class="text-start psinmargen">Fecha desde:</p>
+                            <div class="">
+                                <input placeholder="Seleccione rango de inicio" type="date" id="fechaInicio"
+                                    class="form-control">
+                            </div>
+                            <p class="text-center psinmargen">hasta</p>
+                            <div class="">
+                                <input placeholder="Seleccione rango  final" type="date" id="fechaFinal"
+                                    class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 d-flex flex-column mt-4 px-4 px-sm-0 row-gap-3">
+                    <!--COLOCAMOS LA BARRA DE BUSQUEDA-->
+                    <div class="row d-flex">
+                        <form class="col-12 d-flex ps-3" id="formBuscar">
+                            <input class="form-control" type="search" placeholder="Buscar un cliente..."
+                                name="buscarPedido" id="buscarPedido" oninput="verificarReset()" aria-label="Search">
+                            <button class="btn" type="submit"><img src="../../resources/img/lupa.png" class="img-fluid"
+                                    width="35px" height="35px" alt="buscarimg"></button>
+                        </form>
+                    </div>
+                    <div class="row d-flex justify-content-md-end justify-content-center">
+                        <!-- Botón para abrir el reporte de pedidos -->
+                        <button type="button"
+                            class="btn btn-warning d-flex align-items-center justify-content-center gap-3 text-light w-50" id="botonReporte"
+                            onclick="openReport()">
+                            <i class="bi bi-filetype-pdf fs-5"></i>
+                            <p class="psinmargen fw-semibold">Generar reporte</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CREAMOS LA TABLA DONDE IRAN TODAS LAS FILAS Y COLUMNAS -->
+        <div class="table-responsive-md mt-5 px-md-5">
+            <table class="table">
+                <!-- CREAMOS LA CABECERA DE LA TABLA DE PEDIDOS -->
+                <thead>
+                    <tr>
+                        <!-- Cantidad de registros -->
+                        <td colspan="7" id="filasEncontradas"></td>
+                    </tr>
+                    <tr>
+                        <th class="text-center">Nombre del cliente</th>
+                        <th class="text-center">Teléfono del cliente</th>
+                        <th class="text-center">Fecha de pedido</th>
+                        <th class="text-center">Estado</th>
+                        <th class="text-center">Artículos</th>
+                        <th class="text-center">Total</th>
+                        <th class="text-center">Acción</th>
+                    </tr>
+                </thead>
+                <!-- CREAMOS EL INTERIOR DE LA TABLA (LAS FILAS Y COLUMNAS DE CADA INFORMACIÓN)-->
+                <tbody id="cuerpoTabla">
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </main>
+    <!-- IMPORTANDO ARCHIVOS JAVASCRIPT -->
+    <!-- Mandar a llamar el framework -->
+    <script type="text/javascript" src="../../resources/js/bootstrap.bundle.min.js"></script>
+    <!-- Mandar a llamar la librería de alertas -->
+    <script type="text/javascript" src="../../resources/js/sweetalert.min.js"></script>
+    <!-- Llamada al controlador general de la aplicación -->
+    <script type="text/javascript" src="../../controllers/utils/componentes.js"></script>
+    <!-- Mandar a llamar el controlador de la página privada -->
+    <script type="text/javascript" src="../../controllers/utils/admin.js"></script>
+    <!-- Mandar a llamar el controlador de pedidos -->
+    <script type="text/javascript" src="../../controllers/private/pedidos.js"></script>
+</body>
+
+</html>

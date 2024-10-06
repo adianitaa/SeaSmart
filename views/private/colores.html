@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<!-- Declaración del idioma para el documento -->
+<html lang="es">
+
+<head>
+    <!-- Título del documento -->
+    <title>Colores</title>
+    <!-- Metadatos de la página web -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- IMPORTACIÓN DE RECURSOS EXTERNOS-->
+    <!-- Mandar a llamar el framework -->
+    <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Mandar a llamar css del navbar -->
+    <link href="../../resources/css/navbar_privado.css" rel="stylesheet">
+    <!-- Css para la tabla responsive -->
+    <link href="../../resources/css/tabla_responsive.css" rel="stylesheet">
+</head>
+
+<!-- Cuerpo de la página web -->
+
+<body>
+    <!-- Contenido principal del documento -->
+    <main>
+        <!-- CREAMOS FILAS Y COLUMNAS (ROW = FILAS, COL = COLUMNAS) -->
+        <!-- CREAMOS EL CONTENEDOR PADRE DE LOS ELEMENTOS  BOTON AGREGAR Y LA BARRA DE BUSQUEDA-->
+        <div class="container-fluid">
+            <!-- CREAMOS LA FILA Y COLUMNA DONDE COLOCAMOS EL BOTON "AGREGAR COLOR" Y LA "BARRA DE BUSQUEDA"-->
+            <div class="row mt-5 row-gap-3">
+                <div class="col-12 col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <!-- Botón para abrir el modal -->
+                    <button type="button" class="btn btn-primary ms-5" onclick="abrirModal('Agregar color')">Agregar
+                        Color
+                        +</button>
+                </div>
+                <div class="col-12 col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <form class="d-flex" id="formBuscar">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Buscar color..." name="buscarColor" id="buscarColor" oninput="verificarReset()">
+                        <button class="btn" type="submit"><img src="../../resources/img/lupa.png" class="img-fluid"
+                                width="35px" height="35px" alt="buscarimg"></button>
+                    </form>
+                </div>
+            </div>
+            <!-- CREAMOS LA FILA DONDE COLOCAMOS LA TABLA DE LOS ELEMENTOS -->
+            <div class="table-responsive-md mt-5" id="contenedorTabla">
+                <table class="table">
+                    <!-- CREAMOS LA CABECERA DE LA TABLA COLORES -->
+                    <thead>
+                        <tr>
+                            <td colspan="2" id="filasEncontradas"></td>
+                        </tr>
+                        <tr>
+                            <th class="text-center">Color</th>
+                            <th class="text-center">Acciones</th>
+                        </tr>
+                    </thead>
+                    <!-- CREAMOS EL INTERIOR DE LA TABLA (LAS FILAS Y COLUMNAS DE CADA COLOR)-->
+                    <tbody id="cuerpoTabla">
+                        <!-- FILA -->
+                        <tr>
+                            <td class="text-center">Verde</td>
+                            <td id="celda-agregar-eliminar" class="text-center"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Modal agregar -->
+        <div class="modal fade" id="modalColor">
+            <div class="modal-dialog modal-dialog-centered modal-sm">
+                <div class="modal-content">
+                    <!-- Encabezado del modal -->
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="tituloModal"></h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <form id="formColor">
+                        <!-- Cuerpo del modal -->
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md">
+                                    <div class="row">
+                                        <div class="mb-md">
+                                            <input type="number" class="d-none" id="idColor" name="idColor">
+                                            <label for="nombreColor" class="col-form-label">Nombre del color:</label>
+                                            <input type="text" class="form-control" id="nombreColor"
+                                                name="nombreColor">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Footer del modal -->
+                        <div class="modal-footer d-flex justify-content-center">
+                            <button type="submit" class="btn" id="btnAccion"></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal eliminar -->
+        <div class="modal fade" id="borrarModalColor">
+            <div class="modal-dialog">
+                <form id="formEliminar">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="tituloModalEliminar"></h1>
+                            <input type="number" class="d-none" id="inputIdColor" name="idColor">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <button type="button" class="btn btn-primary" onclick="eliminarColor()">Eliminar</button>
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </main>
+    <!-- IMPORTANDO ARCHIVOS JAVASCRIPT -->
+    <!-- Mandar a llamar el framework -->
+    <script type="text/javascript" src="../../resources/js/bootstrap.bundle.min.js"></script>
+    <!-- Mandar a llamar la librería de alertas -->
+    <script type="text/javascript" src="../../resources/js/sweetalert.min.js"></script>
+    <!-- Llamada al controlador general de la aplicación -->
+    <script type="text/javascript" src="../../controllers/utils/componentes.js"></script>
+    <!-- Mandar a llamar el controlador de la página privada -->
+    <script type="text/javascript" src="../../controllers/utils/admin.js"></script>
+    <!-- Controlador de colores -->
+    <script type="text/javascript" src="../../controllers/private/colores.js"></script>
+</body>
+
+</html>

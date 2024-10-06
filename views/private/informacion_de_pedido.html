@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!-- Declaración del idioma -->
+<html lang="es">
+
+<head>
+    <!-- Metadatos de la página -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título de la página -->
+    <title>Información pedido</title>
+    <!-- Mandar a llamar el framework -->
+    <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Css de la página -->
+    <link rel="stylesheet" href="../../resources/css/quienes_somos.css" type="text/css">
+    <!-- Mandar a llamar el css del navbar -->
+    <link rel="stylesheet" href="../../resources/css/navbar_publico.css" type="text/css">
+    <!-- Mandar a llamar el css de linea vertical -->
+    <link rel="stylesheet" href="../../resources/css/informacion_de_pedido.css" type="text/css">
+</head>
+
+<!-- Cuerpo de la página -->
+
+<body>
+
+    <main>
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-md-6">
+                    <h1>Información de pedido</h1>
+                    <div class="row">
+                        <div class="col-sm-6 col-md-6">
+                            <h6 class="custom-bold-label">Nombre del cliente:</h6>
+                            <p>Gustavo Cerati</p>
+                        </div>
+                        <div class="col-sm-6 col-md-6">
+                            <h6 class="list-group">Fecha del pedido:</h6>
+                            <p>12/04/2024</p>
+                        </div>
+                        <div class="col-sm-6 col-md-6">
+                            <h6 class="custom-bold-label">Número de teléfono:</h6>
+                            <p>0909-8787</p>
+                        </div>
+                        <div class="col-sm-6 col-md-6">
+                            <h6 class="list-group">Estado del pedido:</h6>
+                            <p>Finalizado</p>
+                        </div>
+                        <div class="col-sm-6 col-md-6">
+                            <h6 class="custom-bold-label">Teléfono fijo:</h6>
+                            <p>8990-6677</p>
+                        </div>
+                        <div class="col-sm-6 col-md-6">
+                            <h6 class="list-group">Dirección del pedido:</h6>
+                            <p>Colonia Veracruz Cl Ppal y Av Montreal No 14 Mejicanos</p>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col text-center">
+                                <a href="../../views/private/editar_pedido.html">
+                                <button type="button" class="btn btn-info">Editar pedido
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                                    <path
+                                        d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325" />
+                                </svg>
+                                </button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Linea vertical -->
+                <div class="vertical-line col-md-1"></div>
+
+                <div class="col-md-5">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-6">
+                            <p class="list-group">Cantidad de productos: 5</p>
+                        </div>
+                        <div class="col-sm-6 col-md-6">
+                            <p class="list-group">Total del pedido: $24 </p>
+                        </div>
+                        <div>
+                            <hr id="color_linea">
+                        </div>
+                        <!-- Columna para la imagen -->
+                        <div class="col-6">
+                            <img src="../../resources/img/goggles.jpg" alt="Goggles" class="img-fluid">
+                        </div>
+                        <!-- Columna para la descripción -->
+                        <div class="col-6">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <h5>Goggles color rosa</h5>
+                                    <p>Cantidad: 1</p>
+                                    <p>Precio: $12.00</p>
+                                    <p>SubTotal: $12.00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- Columna para la imagen -->
+                        <div class="col-6">
+                            <img src="../../resources/img/goggles.jpg" alt="Goggles" class="img-fluid">
+                        </div>
+                        <!-- Columna para la descripción -->
+                        <div class="col-6">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <h5>Goggles color rosa</h5>
+                                    <p>Cantidad: 1</p>
+                                    <p>Precio: $12.00</p>
+                                    <p>SubTotal: $12.00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+    <!-- IMPORTANDO ARCHIVOS JAVASCRIPT -->
+    <!-- Mandar a llamar el framework -->
+    <script type="text/javascript" src="../../resources/js/bootstrap.bundle.min.js"></script>
+    <!-- Mandar a llamar la librería de alertas -->
+    <script type="text/javascript" src="../../resources/js/sweetalert.min.js"></script>
+    <!-- Llamada al controlador general de la aplicación -->
+    <script type="text/javascript" src="../../controllers/utils/componentes.js"></script>
+    <!-- Mandar a llamar el controlador de la página privada -->
+    <script type="text/javascript" src="../../controllers/utils/admin.js"></script>
+</body>
+
+</html>

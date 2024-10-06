@@ -1,0 +1,15 @@
+p.cantidad{
+    margin-bottom: 0;
+}
+
+img.cantidad{
+    cursor: pointer;
+}
+
+.producto_hr{
+    border-width: 4px;
+}
+
+.img-fluid.border{
+    width: 20%; height: 20%;
+}

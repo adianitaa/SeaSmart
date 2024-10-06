@@ -1,0 +1,61 @@
+#contenedorDirecciones{
+    max-height: 830px;
+    overflow-y: auto;
+}
+
+.psinmargen{
+    margin: 0;
+}
+
+@media only screen and (min-width: 1920px) {
+    #tablaAdmin{
+        height: 505px; 
+        overflow-y: auto;
+    }
+    #tablaClientes{
+        height: 505px; 
+        overflow-y: auto;
+    }
+}
+
+@media only screen and (max-width: 1629px) {
+    #tablaAdmin{
+        height: 430px; 
+        overflow-y: auto;
+    }
+    #tablaClientes{
+        height: 430px; 
+        overflow-y: auto;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    #tablaAdmin{
+        height: 375px; 
+        overflow-y: auto;
+    }
+    #tablaClientes{
+        height: 375px; 
+        overflow-y: auto;
+    }
+}
+
+@media only screen and (max-width: 431px) {
+    #tablaAdmin{
+        height: 400px; 
+        overflow-y: auto;
+    }
+    #tablaClientes{
+        height: 400px; 
+        overflow-y: auto;
+    }
+}
+
+@media only screen and (max-width:767px) {
+    #botonReporteClientes{
+        width: 75% !important;
+    }
+    #botonAgregar{
+        width: 100% !important;
+    }
+}

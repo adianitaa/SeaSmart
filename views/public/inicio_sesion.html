@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!-- Idioma de la página -->
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de sesión</title>
+    <!-- Mandar a llamar el framework -->
+    <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Mandar a llamar el css de la página -->
+    <link rel="stylesheet" href="../../resources/css/registro.css" type="text/css">
+    <!-- Mandar a llamar el css del navbar -->
+    <link rel="stylesheet" href="../../resources/css/navbar_publico.css" type="text/css">
+</head>
+<!-- Cuerpo de la página -->
+
+<body>
+    <!-- Contenido principal del cuerpo -->
+    <main class="mb-5 mt-5">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <!-- Formulario de inicio de sesión -->
+                <form class="col-11 col-sm-11 col-md-6 col-lg-5 border border-secondary rounded-5" id="formLogin">
+                    <!-- Div para ingresar credenciales de inicio de sesión -->
+                    <!-- <div class="border border-secondary rounded-5"> -->
+                    <div class="mt-5 mb-5 me-4 ms-4">
+                        <h3 class="mb-4">Inicia sesión</h3>
+                        <h6 class="mb-4">Ingrese sus credenciales de usuario</h6>
+                        <div class="mb-4">
+                            <label for="correoLogin" for="validationDefault01" class="form-label">Correo electrónico</label>
+                            <input type="email" class="form-control" id="validationDefault01" id="correoLogin" required
+                                placeholder="juanadelcarmen@gmail.com" name="correo">
+                        </div>
+                        <div>
+                            <label for="contraLogin" for="validationDefault02" class="form-label">Contraseña</label>
+                            <div class="mb-3 d-flex" id="contenedor_contra">
+                                <input type="password" class="form-control" id="contraLogin" required placeholder="•••••••••••"
+                                name="contra" id="validationDefault02">
+                                <div class="btn input-group-addon d-flex align-items-center justify-content-center"
+                                    id="btnMostrar" onclick="Mostrar()">
+                                    <img src="../../resources/img/ojo_ocultar.png" class="img-fluid" width="25px"
+                                        height="25px" alt="mostrarImg">
+                                </div>
+                                <div class="btn input-group-addon d-flex align-items-center justify-content-center"
+                                    id="btnOcultar" onclick="Ocultar()">
+                                    <img src="../../resources/img/ojo_mostrar.png" class="img-fluid" width="25px"
+                                        height="25px" alt="ocultarImg">
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mb-4 text-center"><a class="link-offset-1" href="#">¿Olvidaste tu contraseña?</a></p>
+                        <div class="d-grid gap-1">
+                            <button class="btn btn-dark rounded-pill" type="submit" id="btnEnviar">Iniciar sesión</button>
+                        </div>
+                    </div>
+                    <!-- </div> -->
+                </form>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-11 col-sm-11 col-md-6 col-lg-5 d-flex flex-row">
+                    <div class="col-5">
+                        <hr id="color_linea">
+                    </div>
+                    <div class="col text-center fs-4">
+                        O
+                    </div>
+                    <div class="col-5">
+                        <hr id="color_linea">
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-11 col-sm-11 col-md-6 col-lg-5">
+                    <div class="d-grid gap-1 mb-4">
+                        <div class="border border-secondary rounded-3 mb-5">
+                            <p class="text-center pt-3">¿No tienes una cuenta? <a class="link-offset-1"
+                                    id="btnRegistrarse" href="registro.html">Registrarse</a> </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- Mandar a llamar el framework -->
+    <script src="../../resources/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+    <!-- Mandar a llamar la librería de alertas -->
+    <script type="text/javascript" src="../../resources/js/sweetalert.min.js"></script>
+    <!-- Llamada al controlador general de la aplicación -->
+    <script type="text/javascript" src="../../controllers/utils/componentes.js"></script>
+    <!-- Mandar a llamar el navbar -->
+    <script type="text/javascript" src="../../controllers/utils/publico.js"></script>
+    <!-- Mandar a llamar el controlador de inicio de sesión -->
+    <script type="text/javascript" src="../../controllers/public/inicio_sesion.js"></script>
+</body>
+
+</html>

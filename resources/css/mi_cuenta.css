@@ -1,0 +1,24 @@
+.btn-primary{
+    width: 235px;
+}
+
+.rounded-0{
+    background-color: #F2DBDC;
+    color: black;
+    border: none;
+    --bs-btn-hover-bg:#D75858;
+    --bs-btn-active-bg:#D75858;
+    --bs-btn-active-color:#ffffff;
+}
+
+.vr{
+    background-color: #D75858;
+    color: #D75858;
+    opacity: 100;
+    --bs-border-width:10px;
+    min-height: 36px;
+}
+
+.row.d-flex{
+    --bs-gutter-x:0rem;
+}

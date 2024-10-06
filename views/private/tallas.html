@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<!-- Idioma de la página web -->
+<html lang="es">
+
+<head>
+    <!-- Metadatos de la página -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título de la página -->
+    <title>Tallas</title>
+    <!-- Mandar a llamar el framework -->
+    <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Mandar a llamar css del navbar -->
+    <link href="../../resources/css/navbar_privado.css" rel="stylesheet">
+</head>
+<!-- Cuerpo de la página web -->
+
+<body>
+    <main>
+        <div class="container-fluid">
+            <div class="row d-flex align-items-center justify-content-end mt-5 row-gap-3">
+                <div class="col-12 col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <!-- Botón para abrir el Modal -->
+                    <button type="button" class="btn btn-primary ms-5" onclick="abrirCrear()">Agregar Talla +</button>
+                </div>
+                <div class="col-12 col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <form class="d-flex" id="formBuscar">
+                        <input class="form-control" type="buscar" placeholder="Buscar una talla.." name="buscarTalla"
+                            id="buscarTalla" oninput="verificarReset">
+                        <button class="btn" type="submit">
+                            <img src="../../resources/img/lupa.png" class="img-fluid" width="35px" height="35px"
+                                alt="buscarimg"></button>
+                    </form>
+                </div>
+            </div>
+            <div class="table-responsive-md mt-5">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <!-- Cantidad de registros -->
+                            <td id="filasEncontradas"></td>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="row mt-5">
+                <!-- Div contenedor de la tabla -->
+                <div class="container-fluid">
+                    <!-- Tabla con los datos -->
+                    <table class="table">
+                        <!-- Cabeceras de la tabla -->
+                        <thead>
+                            <tr>
+                                <th class="text-center">Nombre de la talla</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <!-- Cuerpo de la tabla con la información -->
+                        <tbody id="cuerpoTabla">
+                            <!-- Fila 1 -->
+                            <tr>
+                                <td class="text-center">S</td>
+                                <td id="celda-agregar-eliminar">
+                                    <!-- Creamos los botones de editar y eliminar -->
+                                    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                        <button type="button" class="btn btn-success" onclick="abrirEditar()">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325" />
+                                            </svg>
+                                        </button>
+                                        <button type="button" class="btn btn-danger" onclick="abrirEliminar()">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5" />
+                                            </svg>
+                                        </button>
+                                </td>
+                            </tr>
+<
+
+
+                </div>
+                <!-- Modal editar -->
+                <div class="modal fade" id="editModal_talla">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header text-center">
+                                <h5 class="modal-title w-100 font-weight-bold">Editar </h5>
+                                <button type="button" class="btn" onclick="abrirCrear()"></button>
+                            </div>
+                            <div class="modal-header text-center">
+                                <h5 class="modal-title w-100 font-weight-bold">Editar talla</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <!-- Cuerpo del modal -->
+                            <div class="modal-body">
+                                <form class="row g-3 needs-validation" novalidate>
+                                    <div class="col">
+                                        <label for="nuevaTalla" class="form-label">Nueva talla a agregar:</label>
+                                        <input type="text" class="form-control" id="nuevaTalla">
+                                    </div>
+                                    <!-- Footer del modal -->
+                                    <div class="modal-footer d-flex align-items-center justify-content-center">
+                                        <button type="button" class="btn btn-primary close"
+                                            data-bs-dismiss="modal">Editar
+                                            talla</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal agregar -->
+                <div class="modal fade" id="crearModal_talla">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header text-center">
+                                <h5 class="modal-title w-100 font-weight-bold">Agregar talla</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <!-- Cuerpo del modal -->
+                            <div class="modal-body">
+                                <form class="row g-3 needs-validation" novalidate>
+                                    <div class="col">
+                                        <label for="talla" class="form-label">Talla a agregar:</label>
+                                        <input type="text" class="form-control" id="talla">
+                                    </div>
+                                    <!-- Footer del modal -->
+                                    <div class="modal-footer d-flex align-items-center justify-content-center">
+                                        <button type="button" class="btn btn-primary close"
+                                            data-bs-dismiss="modal">Agregar
+                                            talla</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal eliminar -->
+                <div class="modal fade" id="borrarModal_talla">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Estás seguro de que quieres
+                                    eliminar?</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Eliminar</button>
+                                <button type="button" class="btn btn-secondary"
+                                    data-bs-dismiss="modal">Cancelar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </main>
+    <!-- IMPORTANDO ARCHIVOS JAVASCRIPT -->
+    <!-- Mandar a llamar el framework -->
+    <script type="text/javascript" src="../../resources/js/bootstrap.bundle.min.js"></script>
+    <!-- Mandar a llamar la librería de alertas -->
+    <script type="text/javascript" src="../../resources/js/sweetalert.min.js"></script>
+    <!-- Llamada al controlador general de la aplicación -->
+    <script type="text/javascript" src="../../controllers/utils/componentes.js"></script>
+    <!-- Mandar a llamar el controlador de la página privada -->
+    <script type="text/javascript" src="../../controllers/utils/admin.js"></script>
+    <!-- Controlador de tallas -->
+    <script type="text/javascript" src="../../controllers/private/tallas.js"></script>
+</body>
+
+</html>

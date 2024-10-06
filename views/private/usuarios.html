@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Metadatos de la página web -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título de la página -->
+    <title>Usuarios</title>
+    <!-- Mandar a llamar el framework -->
+    <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Mandar a llamar css del navbar -->
+    <link href="../../resources/css/navbar_privado.css" rel="stylesheet">
+    <!-- Mandar a llamar css de la página -->
+    <link href="../../resources/css/usuarios.css" rel="stylesheet">
+    <!-- Mandar a llamar íconos del framework -->
+    <link href="../../resources/css/bootstrap-icons.min.css" rel="stylesheet">
+</head>
+
+<!-- Cuerpo de la página -->
+
+<body>
+    <!-- Contenido principal de la página -->
+    <main>
+        <!-- Contenedor padre -->
+        <div class="container-fluid mt-5">
+            <div class="row px-md-5">
+                <div class="col-12 col-sm-6 d-flex flex-column row-gap-3">
+                    <!-- Botón para abrir el modal -->
+                    <div class="d-flex">
+                        <button type="button" class="btn btn-primary" id="botonAgregar" onclick="validarAbrirModal()">
+                        </button>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <p class="text-start mtexto-0">Tipo de usuario:</p>
+                        <div class="dropdown">
+                            <select class="form-select form -select-sm" name="selectUsuarios" id="selectUsuarios"
+                                onchange="cargarTabla()">
+                                <option>Administradores</option>
+                                <option>Clientes</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 d-flex flex-column row-gap-3 mt-3 mt-md-0">
+                    <form class="d-flex" id="formBuscar">
+                        <input class="form-control mr-sm-2" type="search" placeholder="" name="buscarUsuario"
+                            id="buscarUsuario" oninput="verificarReset()">
+                        <button class="btn" type="submit"><img src="../../resources/img/lupa.png" class="img-fluid"
+                                width="35px" height="35px" alt="buscarimg"></button>
+                    </form>
+                    <div class="row d-flex justify-content-md-end justify-content-center">
+                        <!-- Botón para abrir el reporte de clientes -->
+                        <button type="button"
+                            class="btn btn-warning d-flex align-items-center justify-content-center gap-3 text-light w-50"
+                            id="botonReporteClientes" onclick="openReport()">
+                            <i class="bi bi-filetype-pdf fs-5"></i>
+                            <p class="psinmargen fw-semibold">Generar reporte de clientes</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid table-responsive mt-3" id="tablaAdmin">
+                <table class="table table-hover">
+                    <!-- Cabecera de la tabla -->
+                    <thead>
+                        <tr>
+                            <td colspan="6" id="filasAdministradores"></td>
+                        </tr>
+                        <tr>
+                            <th class="text-center">Nombre</th>
+                            <th class="text-center">Apellido</th>
+                            <th class="text-center">Correo</th>
+                            <th class="text-center">Fecha de registro</th>
+                            <th class="text-center">Estado</th>
+                            <th class="text-center">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpoTablaAdmin">
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-responsive-md d-none container-fluid" id="tablaClientes">
+                <table class="table table-hover">
+                    <!-- Cabecera de la tabla -->
+                    <thead>
+                        <tr>
+                            <td colspan="6" id="filasClientes"></td>
+                        </tr>
+                        <tr>
+                            <th class="text-center">Nombre</th>
+                            <th class="text-center">Apellido</th>
+                            <th class="text-center">Correo</th>
+                            <th class="text-center">DUI</th>
+                            <th class="text-center">Estado</th>
+                            <th class="text-center">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpoTablaClientes">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Modal para agregar o editar un administrador-->
+            <div class="modal" id="modalAdmin">
+                <div class="modal-dialog modal-dialog-centered modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="tituloModalAdmin"></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <form id="formAdmin">
+                            <div class="modal-body">
+                                <div class="row row-gap-3">
+                                    <div class="col-12 col-md-6">
+                                        <input type="number" class="d-none" id="idAdministrador" name="idAdministrador">
+                                        <label for="nombreAdministrador" class="col-form-label">Nombre</label>
+                                        <input type="text" class="form-control" id="nombreAdministrador"
+                                            name="nombreAdministrador" required>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <label for="apellidoAdministrador" class="col-form-label">Apellido</label>
+                                        <input type="text" class="form-control" id="apellidoAdministrador"
+                                            name="apellidoAdministrador" required>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <label for="correoAdministrador" class="col-form-label">Correo</label>
+                                        <input type="email" class="form-control" id="correoAdministrador"
+                                            name="correoAdministrador" required>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <label for="contraAdministrador" class="form-label">Contraseña</label>
+                                        <div class="col-12 d-flex">
+                                            <input type="password" id="contraAdministrador" name="contraAdministrador"
+                                                class="form-control inputT" placeholder="••••••••••••••••" required>
+                                            <div class="btn input-group-addon d-flex align-items-center justify-content-center"
+                                                onclick="mostrarContra('contraAdministrador')">
+                                                <img src="../../resources/img/ojo_ocultar.png" class="img-fluid"
+                                                    width="25px" height="25px" alt="mostrarImg">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <label for="confirmarContraAdmin" class="form-label">Confirmar
+                                            contraseña</label>
+                                        <div class="col-12 d-flex">
+                                            <input type="password" id="confirmarContraAdmin" name="confirmarContraAdmin"
+                                                class="form-control inputT" placeholder="••••••••••••••••" required>
+                                            <div class="btn input-group-addon d-flex align-items-center justify-content-center"
+                                                onclick="mostrarContra('confirmarContraAdmin')">
+                                                <img src="../../resources/img/ojo_ocultar.png" class="img-fluid"
+                                                    width="25px" height="25px" alt="mostrarImg">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 d-none" id="contenedorEstadoAdmin">
+                                        <label for="estadoAdministrador" class="form-label">Estado del
+                                            administrador</label>
+                                        <select class="form-select" id="estadoAdministrador">
+                                            <option selected>Activo</option>
+                                            <option value="1">Dado de baja</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer d-flex justify-content-center">
+                                <button type="submit" class="btn text-center" id="btnAccionAdmin"></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal eliminar administrador -->
+            <div class="modal fade" id="borrarModalAdministrador">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form id="formEliminarAdmin">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="tituloModalEliminarAdmin"></h1>
+                                <input type="number" class="d-none" id="inputIdAdministrador" name="idAdministrador">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <button type="submit" class="btn btn-primary" onclick="">Eliminar</button>
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal para agregar o editar un cliente -->
+            <div class="modal" id="modalCliente">
+                <div class="modal-dialog modal-dialog-centered modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="tituloModalCliente"></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <form id="formCliente">
+                            <div class="modal-body">
+                                <div class="row row-gap-3">
+                                    <div class="col-12 col-md-6">
+                                        <input type="number" class="d-none" id="idCliente" name="idCliente">
+                                        <label for="nombreCliente" class="col-form-label">Nombre</label>
+                                        <input type="text" class="form-control" id="nombreCliente" name="nombreCliente"
+                                            required>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <label for="apellidoCliente" class="col-form-label">Apellido</label>
+                                        <input type="text" class="form-control" id="apellidoCliente"
+                                            name="apellidoCliente" required>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <label for="duiCliente" class="form-label">DUI</label>
+                                        <input type="text" id="duiCliente" name="duiCliente" placeholder="00000000-0"
+                                            class="form-control" required>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <label for="correoCliente" class="col-form-label">Correo</label>
+                                        <input type="email" class="form-control" id="correoCliente" name="correoCliente"
+                                            required>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <label for="contraCliente" class="form-label">Contraseña</label>
+                                        <div class="col-12 d-flex">
+                                            <input type="password" id="contraCliente" name="contraCliente"
+                                                class="form-control inputT" placeholder="••••••••••••••••" required>
+                                            <div class="btn input-group-addon d-flex align-items-center justify-content-center"
+                                                onclick="mostrarContra('contraCliente')">
+                                                <img src="../../resources/img/ojo_ocultar.png" class="img-fluid"
+                                                    width="25px" height="25px" alt="mostrarImg">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <label for="confirmarContraCliente" class="form-label">Confirmar
+                                            contraseña</label>
+                                        <div class="col-12 d-flex">
+                                            <input type="password" id="confirmarContraCliente"
+                                                name="confirmarContraCliente" class="form-control inputT"
+                                                placeholder="••••••••••••••••" required>
+                                            <div class="btn input-group-addon d-flex align-items-center justify-content-center"
+                                                onclick="mostrarContra('confirmarContraCliente')">
+                                                <img src="../../resources/img/ojo_ocultar.png" class="img-fluid"
+                                                    width="25px" height="25px" alt="mostrarImg">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <label for="telefonoCliente" class="form-label">Teléfono</label>
+                                        <input type="text" id="telefonoCliente" name="telefonoCliente"
+                                            placeholder="0000-0000" class="form-control" required>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <label for="telefonoFijoCliente" class="form-label">Teléfono fijo
+                                            (Opcional)</label>
+                                        <input type="text" id="telefonoFijoCliente" name="telefonoFijoCliente"
+                                            placeholder="0000-0000" class="form-control">
+                                    </div>
+                                    <div class="col-12 col-md-6 d-none" id="contenedorEstadoCliente">
+                                        <label for="estadoCliente" class="form-label">Estado del cliente</label>
+                                        <select class="form-select" id="estadoCliente">
+                                            <option selected>Activo</option>
+                                            <option value="1">Dado de baja</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer d-flex justify-content-center">
+                                <button type="submit" class="btn" id="btnAccionCliente"></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal eliminar cliente -->
+            <div class="modal fade" id="borrarModalCliente">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form id="formEliminarCliente">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="tituloModalEliminarCliente"></h1>
+                                <input type="number" class="d-none" id="inputIdCliente" name="idCliente">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <button type="submit" class="btn btn-primary" onclick="">Eliminar</button>
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal direcciones de cliente -->
+            <div class="modal fade" id="modalDireccionesCliente">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="tituloModalDirecciones"></h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body px-5" id="contenedorDirecciones">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <!-- IMPORTANDO ARCHIVOS JAVASCRIPT -->
+    <!-- Librería para generar PDF -->
+    <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+    <!-- Mandar a llamar el framework -->
+    <script type="text/javascript" src="../../resources/js/bootstrap.bundle.min.js"></script>
+    <!-- Mandar a llamar la librería de alertas -->
+    <script type="text/javascript" src="../../resources/js/sweetalert.min.js"></script>
+    <!-- Llamada al controlador general de la aplicación -->
+    <script type="text/javascript" src="../../controllers/utils/componentes.js"></script>
+    <!-- Mandar a llamar el controlador de la página privada -->
+    <script type="text/javascript" src="../../controllers/utils/admin.js"></script>
+    <!-- Controlador js de administrador -->
+    <script type="text/javascript" src="../../controllers/private/administradores.js"></script>
+    <!-- Controlador js de clientes -->
+    <script type="text/javascript" src="../../controllers/private/clientes.js"></script>
+</body>
+
+</html>

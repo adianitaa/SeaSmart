@@ -1,0 +1,13 @@
+a{
+    text-decoration: inherit;
+}
+
+#regis{
+    text-decoration: underline;
+    color: blue;
+}
+
+#color_linea{
+    color: black;
+    height: 10px;
+}

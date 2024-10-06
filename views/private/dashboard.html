@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<!-- Declaración del idioma para el documento -->
+<html lang="es">
+
+<head>
+    <!-- Título del documento -->
+    <title>Dashboard</title>
+    <!-- Metadatos de la página web -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- IMPORTACIÓN DE RECURSOS EXTERNOS-->
+    <!-- Mandar a llamar el framework -->
+    <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Mandar a llamar css del navbar -->
+    <link href="../../resources/css/navbar_privado.css" rel="stylesheet">
+</head>
+
+<!-- Cuerpo de la página web -->
+
+<body>
+    <!-- Contenido principal del documento -->
+    <main>
+        <div class="container-fluid text-center pt-5">
+            <!-- Título del contenido principal -->
+            <p class="fs-4 fw-bold" id="tituloPrincipal"></p>
+
+            <!-- Contenedor del carrusel -->
+            <div class="row">
+                <!-- Carrusel con los gráficos -->
+                <div id="carruselGraficos" class="carousel slide">
+                    <!-- Contenedor de gráficos -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" id="carouselChart1">
+                            <div class="contenedor-grafico d-flex justify-content-center">
+                                <!-- Se muestra un gráfico con el porcentaje de productos por subcategoría -->
+                                <canvas id="chart1" class="col-lg-4"></canvas>
+                            </div>
+                        </div>
+                        <div class="carousel-item" id="carouselChart2">
+                            <div class="contenedor-grafico d-flex justify-content-center">
+                                <!-- Se muestra un gráfico con el porcentaje de productos por categoría -->
+                                <canvas id="chart2" class="col-lg-4"></canvas>
+                            </div>
+                        </div>
+                        <!-- Contenedor de grafico de barra -->
+                        <div class="carousel-item" id="carouselChart3">
+                            <div class="contenedor-grafico d-flex justify-content-center">
+                                <!-- Se muestra un gráfico con el porcentaje de productos por categoría -->
+                                <canvas id="chart3" class="col-lg-4"></canvas>
+                            </div>
+                        </div>
+                        <div class="carousel-item" id="carouselChartProdSub">
+                            <div class="contenedor-grafico d-flex justify-content-center">
+                                <!-- Se muestra un gráfico con la cantidad de productos por subcategoría -->
+                                <canvas id="chartProdSub" class="col-lg-4"></canvas>
+                            </div>
+                        </div>
+                        <div class="carousel-item" id="carouselChartProdCat">
+                            <div class="contenedor-grafico d-flex justify-content-center">
+                                <!-- Se muestra un gráfico con la cantidad de productos por subcategoría -->
+                                <canvas id="chartProdCat" class="col-lg-4"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Flecha de navegación izquierda-->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carruselGraficos"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <!-- Flecha de navegación derecha -->
+                    <button class="carousel-control-next" type="button" data-bs-target="#carruselGraficos"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- IMPORTANDO ARCHIVOS JAVASCRIPT -->
+    <!-- Importación de la librería para generar los gráficos. Para más información https://www.chartjs.org/ -->
+    <script type="text/javascript" src="../../resources/js/chart.umd.min.js"></script>
+    <!-- Mandar a llamar el framework -->
+    <script type="text/javascript" src="../../resources/js/bootstrap.bundle.min.js"></script>
+    <!-- Mandar a llamar la librería de alertas -->
+    <script type="text/javascript" src="../../resources/js/sweetalert.min.js"></script>
+    <!-- Llamada al controlador general de la aplicación -->
+    <script type="text/javascript" src="../../controllers/utils/componentes.js"></script>
+    <!-- Mandar a llamar el controlador de la página privada -->
+    <script type="text/javascript" src="../../controllers/utils/admin.js"></script>
+    <!-- Mandar a llamar el controlador del dashboard -->
+    <script type="text/javascript" src="../../controllers/private/dashboard.js"></script>
+</body>
+
+</html>

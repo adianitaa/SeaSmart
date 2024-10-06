@@ -1,0 +1,29 @@
+#formBuscar{
+    border-radius: 10px;
+    padding: 1px;
+}
+
+#busqueda{
+    background-color: #BCE7FD;
+    border: 0;
+}
+
+#btnBuscar{
+    border-radius: 10px;
+}
+
+html{
+    overflow-x: hidden;
+}
+
+span{
+    color: #3E88DE;
+}
+
+.card{
+    width: 18rem;
+}
+
+.swal-modal .swal-text {
+    text-align: center;
+}
